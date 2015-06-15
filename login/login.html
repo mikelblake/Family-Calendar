@@ -1,0 +1,9 @@
+<div>
+	<h2>Login</h2>
+	<form>
+		<input type="email" placeholder="Enter Email" ng-model="loginUser.email" required>
+		<input type="password" placeholder="Enter Password" ng-model="loginUser.password" required>
+		<button ng-click="login(loginUser)" ng-disabled="loginForm.$invalid">Login</button>
+	</form>
+
+</div>
