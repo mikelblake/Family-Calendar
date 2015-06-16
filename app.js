@@ -14,8 +14,8 @@ app.config(function($routeProvider){
 	})
 
 	.when('/fam_mem/:id', {
-		templateUrl: 'userPage/user.html',
-		controller: 'userCtrl'
+		templateUrl: 'memPage/mem.html',
+		controller: 'memCtrl'
 	})
 
 	// user id path??

@@ -1,18 +1,18 @@
 <div>
 
-<h2 class="inline">{{ user.name }}</h2>
+<h2 class="inline">{{ mem.name }}</h2>
 <!-- Display all entered info -->
 <button ng-click="backButton()" class="inline">Back</button>
 
-<div ng-repeat="item in user.school">School:
+<div ng-repeat="item in mem.school">School:
 	{{ item.name }}
 </div>
 	
-<div ng-repeat="item in user.doctor">Doctor:
+<div ng-repeat="item in mem.doctor">Doctor:
 	{{ item.name }}
 </div>
 
-<div ng-repeat="item in user.activity">Activity:
+<div ng-repeat="item in mem.activity">Activity:
 	{{ item.name }}
 </div>
 
