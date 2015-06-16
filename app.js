@@ -8,6 +8,18 @@ app.config(function($routeProvider){
     controller: 'loginCtrl'
 	})
 
+	.when('/home', {
+		templateUrl: 'homePage/home.html',
+		controller: 'homeCtrl'
+	})
+
+	.when('/fam_mem/:id', {
+		templateUrl: 'userPage/user.html',
+		controller: 'userCtrl'
+	})
+
+	// user id path??
+
 	.otherwise({
     redirectTo: '/login'
 	})

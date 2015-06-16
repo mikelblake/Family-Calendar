@@ -1,0 +1,13 @@
+<h1 class="inline">Family Homepage</h1>
+
+<div class="inline">
+	<input ng-model="mem" placeholder="Name" >
+	<button ng-click="addMem(mem)">Add Family Member</button>
+</div>
+
+<h3>Family Members</h3>
+<div ng-repeat="mem in mems">
+	<a ng-href="#/fam_mem/{{mem.$id}}">{{mem.$id}}</a>
+</div>
+
+<div id="calendar"></div>

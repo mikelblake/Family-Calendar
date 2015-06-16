@@ -1,4 +1,4 @@
-<div>
+<div ng-show="show">
 	<h2>Login</h2>
 	<form>
 		<input type="email" placeholder="Enter Email" ng-model="loginUser.email" required>
@@ -7,3 +7,13 @@
 	</form>
 
 </div>
+
+<button ng-click="show = !show">Login</button>
+<form ng-hide="show">
+	<h2>Register</h2>
+	<input type="text" placeholder="Full Name" ng-model="registerUser.name" required>
+	<input type="email" placeholder="Enter Email" ng-model="registerUser.email" required>
+	<input type="password" placeholder="Enter Password" ng-model="registerUser.password" required>
+	<button ng-click="register(registerUser)" ng-disabled="registerForm.$invalid">Register</button>
+	
+</form>

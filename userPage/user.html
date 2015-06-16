@@ -1,0 +1,56 @@
+<div>
+
+<h2 class="inline">{{ user.name }}</h2>
+<!-- Display all entered info -->
+<button ng-click="backButton()" class="inline">Back</button>
+
+<div ng-repeat="item in user.school">School:
+	{{ item.name }}
+</div>
+	
+<div ng-repeat="item in user.doctor">Doctor:
+	{{ item.name }}
+</div>
+
+<div ng-repeat="item in user.activity">Activity:
+	{{ item.name }}
+</div>
+
+	<select ng-model="formSelect">
+		<option value="school">School</option>
+		<option value="doctor">Doctor</option>
+		<option value="activity">Activity</option>
+	</select>
+	
+	<form ng-if="formSelect === 'school'">
+		<input placeholder="School Name" ng-model="school.name"><br>
+		<input placeholder="School Phone Number" ng-model="school.number"><br>
+		<input placeholder="School Address" ng-model="school.address"><br><!-- imbed google maps -->
+		<input placeholder="Teacher Name" ng-model="school.teacherName"><br>
+		<input placeholder="Teacher Contact" ng-model="school.teacherContact"><br>
+		<input placeholder="Room number" ng-model="school.roomNumber"><br>
+		<input placeholder="Other" ng-model="school.other"><br>
+		<!--Start and End time -->
+		<button ng-click="submitForm(school)">Add School</button>
+	</form>
+
+	<form ng-if="formSelect === 'doctor'">
+		<input placeholder="Doctor Name" ng-model="doctor.name"><br>
+		<input placeholder="Type of Doctor" ng-model="doctor.type"
+		<input placeholder="Doctor Phone Number" ng-model="doctor.number"><br>
+		<input placeholder="Doctor Address" ng-model="doctor.address"><br><!-- imbed google maps -->
+		<input placeholder="Insurance Info" ng-model="doctor.insInfo"><br>
+		<input placeholder="Other" ng-model="school.other"><br>	
+		<button ng-click="submitForm(doctor)">Add Doctor</button>
+	</form>
+
+	<form ng-if="formSelect === 'activity'">
+		<input placeholder="Activity Name" ng-model="activity.name"><br>
+		<input placeholder="Activity Location" ng-model="activity.address"><br>
+		<input placeholder="Activity Contact Info" ng-model="activity.contact"><br>
+		<input placeholder="Other" ng-model="activity.other"><br>
+		<!--Start and End time -->	
+		<button ng-click="submitForm(activity)">Add Activity</button>
+	</form>
+
+</div>
