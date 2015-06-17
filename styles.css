@@ -3,6 +3,10 @@
 	font-family: 'Poiret One', cursive;
 }
 
+input {
+	background-size: 2em;
+}
+
 .header {
 	text-align: center;
 	color: #003366;
@@ -14,6 +18,17 @@
 	color: RoyalBlue;
 	font-family: 'Raleway', sans-serif;
 	font-size: 24px;
+	cursor: pointer;
+}
+
+.wrapper {
+	margin-top: 50px;
+	margin-left: 100px;
+}
+
+.right-wrap {
+	margin-top: 50px;
+	margin-right: 100px;
 }
 
 .center {
@@ -39,7 +54,14 @@
 
 .addMember {
 	float: right;
-	margin-bottom: 70px;
+}
+
+.gut {
+	margin: 15px 30px;
+}
+
+.top-gut {
+	margin-top: 20px;
 }
 
 .clear {

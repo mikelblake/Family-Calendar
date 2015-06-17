@@ -1,97 +1,106 @@
 <h2 class="header">{{ mem.name }}</h2>
 <!-- Display all entered info -->
-<button ng-click="backButton()" class="addMember">Back</button>
+<div class="right-wrap">
+	<button ng-click="backButton()" class="addMember gut">Back</button>
 
 <!-- Input form -->
-<div >
-	<select ng-model="formSelect">
-		<option value="school">School</option>
-		<option value="doctor">Doctor</option>
-		<option value="dentist">Dentist</option>
-		<option value="activity">Activity</option>
-	</select>
-	
-	<form ng-if="formSelect === 'school'">
-		<input placeholder="School Name" ng-model="school.name"><br>
-		<input placeholder="School Phone Number" ng-model="school.number"><br>
-		<input placeholder="School Address" ng-model="school.address"><br><!-- imbed google maps -->
-		<input placeholder="Teacher Name" ng-model="school.teacherName"><br>
-		<input placeholder="Teacher Contact" ng-model="school.teacherContact"><br>
-		<input placeholder="Room number" ng-model="school.roomNumber"><br>
-		<input placeholder="Other" ng-model="school.other"><br>
-		<!--Start and End time -->
-		<button ng-click="submitForm(school)">Add School</button>
-	</form>
 
-	<form ng-if="formSelect === 'doctor'">
-		<input placeholder="Doctor Name" ng-model="doctor.name"><br>
-		<input placeholder="Type of Doctor" ng-model="doctor.type"><br>
-		<input placeholder="Doctor Phone Number" ng-model="doctor.number"><br>
-		<input placeholder="Doctor Address" ng-model="doctor.address"><br><!-- imbed google maps -->
-		<input placeholder="Insurance Info" ng-model="doctor.insInfo"><br>
-		<input placeholder="Other" ng-model="doctor.other"><br>	
-		<button ng-click="submitForm(doctor)">Add Doctor</button>
-	</form>
+	<div class="addMember clear">
+		<select ng-model="formSelect" class="gut">
+			<option value="school">School</option>
+			<option value="doctor">Doctor</option>
+			<option value="dentist">Dentist</option>
+			<option value="activity">Activity</option>
+		</select>
+		
+		<form ng-if="formSelect === 'school'">
+			<input placeholder="School Name" ng-model="school.name"><br>
+			<input placeholder="School Phone Number" ng-model="school.number"><br>
+			<input placeholder="School Address" ng-model="school.address"><br><!-- imbed google maps -->
+			<input placeholder="Teacher Name" ng-model="school.teacherName"><br>
+			<input placeholder="Teacher Contact" ng-model="school.teacherContact"><br>
+			<input placeholder="Room number" ng-model="school.roomNumber"><br>
+			<input placeholder="Other" ng-model="school.other"><br>
+			<!--Start and End time -->
+			<button ng-click="submitForm(school)" class="top-gut">Add School</button>
+		</form>
 
-	<form ng-if="formSelect === 'dentist'">
-		<input placeholder="Dentist Name" ng-model="dentist.name"><br>
-		<input placeholder="Dentist Phone Number" ng-model="dentist.number"><br>
-		<input placeholder="Dentist Address" ng-model="dentist.address"><br><!-- imbed google maps -->
-		<input placeholder="Insurance Info" ng-model="dentist.insInfo"><br>
-		<input placeholder="Other" ng-model="dentist.other"><br>	
-		<button ng-click="submitForm(dentist)">Add Dentist</button>
-	</form>
+		<form ng-if="formSelect === 'doctor'">
+			<input placeholder="Doctor Name" ng-model="doctor.name"><br>
+			<input placeholder="Type of Doctor" ng-model="doctor.type"><br>
+			<input placeholder="Doctor Phone Number" ng-model="doctor.number"><br>
+			<input placeholder="Doctor Address" ng-model="doctor.address"><br><!-- imbed google maps -->
+			<input placeholder="Insurance Info" ng-model="doctor.insInfo"><br>
+			<input placeholder="Other" ng-model="doctor.other"><br>	
+			<button ng-click="submitForm(doctor)">Add Doctor</button>
+		</form>
 
-	<form ng-if="formSelect === 'activity'">
-		<input placeholder="Activity Name" ng-model="activity.name"><br>
-		<input placeholder="Activity Location" ng-model="activity.address"><br>
-		<input placeholder="Activity Contact Info" ng-model="activity.contact"><br>
-		<input placeholder="Other" ng-model="activity.other"><br>
-		<!--Start and End time -->	
-		<button ng-click="submitForm(activity)">Add Activity</button>
-	</form>
-</div>
+		<form ng-if="formSelect === 'dentist'">
+			<input placeholder="Dentist Name" ng-model="dentist.name"><br>
+			<input placeholder="Dentist Phone Number" ng-model="dentist.number"><br>
+			<input placeholder="Dentist Address" ng-model="dentist.address"><br><!-- imbed google maps -->
+			<input placeholder="Insurance Info" ng-model="dentist.insInfo"><br>
+			<input placeholder="Other" ng-model="dentist.other"><br>	
+			<button ng-click="submitForm(dentist)">Add Dentist</button>
+		</form>
 
-<div ng-repeat="item in mem.school">
-	<div ng-click="makeTrue = !makeTrue" class="head">School: {{ item.name }} </div>
-	<div ng-show="makeTrue">
-		<div ng-show="item.number">{{ item.number }}</div>
-		<div ng-show="item.address">{{ item.address }}</div>
-		<div ng-show="item.teacherName">{{ item.teacherName }}</div>
-		<div ng-show="item.teacherContact">{{ item.teacherContact }}</div>
-		<div ng-show="item.roomNumber">{{ item.roomNumber }}</div>
-		<div ng-show="item.other">{{ item.other }}</div>
+		<form ng-if="formSelect === 'activity'">
+			<input placeholder="Activity Name" ng-model="activity.name"><br>
+			<input placeholder="Activity Location" ng-model="activity.address"><br>
+			<input placeholder="Activity Contact Info" ng-model="activity.contact"><br>
+			<input placeholder="Other" ng-model="activity.other"><br>
+			<!--Start and End time -->	
+			<button ng-click="submitForm(activity)">Add Activity</button>
+		</form>
 	</div>
 </div>
-	
-<div ng-repeat="item in mem.doctor">
-	<div ng-click="makeTrue = !makeTrue" class="head">Doctor: {{ item.name }} </div>
-	<div ng-show="makeTrue">
-		<div ng-show="item.type">{{ item.type }}</div>
-		<div ng-show="item.number">{{ item.number }}</div>
-		<div ng-show="item.address">{{ item.address }}</div>
-		<div ng-show="item.insInfo">{{ item.insInfo }}</div>
-		<div ng-show="item.other">{{ item.other }}</div>
+<!--end input form -->
+
+<div class="wrapper">
+	<div ng-repeat="item in mem.school">
+		<div ng-click="makeTrue = !makeTrue" class="head">School</div>
+		<div ng-show="makeTrue">
+			<div ng-show="item.name">{{ item.name }}</div>
+			<div ng-show="item.number">{{ item.number }}</div>
+			<div ng-show="item.address">{{ item.address }}</div>
+			<div ng-show="item.teacherName">{{ item.teacherName }}</div>
+			<div ng-show="item.teacherContact">{{ item.teacherContact }}</div>
+			<div ng-show="item.roomNumber">{{ item.roomNumber }}</div>
+			<div ng-show="item.other">{{ item.other }}</div>
+		</div>
+	</div>
+		
+	<div ng-repeat="item in mem.doctor">
+		<div ng-click="makeTrue = !makeTrue" class="head">Doctor</div>
+		<div ng-show="makeTrue">
+			<div ng-show="item.name">{{ item.name }}</div>
+			<div ng-show="item.type">{{ item.type }}</div>
+			<div ng-show="item.number">{{ item.number }}</div>
+			<div ng-show="item.address">{{ item.address }}</div>
+			<div ng-show="item.insInfo">{{ item.insInfo }}</div>
+			<div ng-show="item.other">{{ item.other }}</div>
+		</div>
+	</div>
+
+	<div ng-repeat="item in mem.dentist">
+		<div ng-click="makeTrue = !makeTrue" class="head">Dentist</div>
+		<div ng-show="makeTrue">
+			<div ng-show="item.name">{{ item.name }}</div>
+			<div ng-show="item.number">{{ item.number }}</div>
+			<div ng-show="item.address">{{ item.address }}</div>
+			<div ng-show="item.insInfo">{{ item.insInfo }}</div>
+			<div ng-show="item.other">{{ item.other }}</div>
+		</div>
+	</div>
+
+	<div ng-repeat="item in mem.activity">
+		<div ng-click="makeTrue = !makeTrue" class="head">Activity</div>
+		<div ng-show="makeTrue">
+			<div ng-show="item.name">{{ item.name }}</div>
+			<div ng-show="item.address">{{ item.address }}</div>
+			<div ng-show="item.contact">{{ item.contact }}</div>
+			<div ng-show="item.other">{{ item.other }}</div>
+		</div>
 	</div>
 </div>
-
-<div ng-repeat="item in mem.dentist">
-	<div ng-click="makeTrue = !makeTrue" class="head">Dentist: {{ item.name }} </div>
-	<div ng-show="makeTrue">
-		<div ng-show="item.number">{{ item.number }}</div>
-		<div ng-show="item.address">{{ item.address }}</div>
-		<div ng-show="item.insInfo">{{ item.insInfo }}</div>
-		<div ng-show="item.other">{{ item.other }}</div>
-	</div>
-</div>
-
-<div ng-repeat="item in mem.activity">
-	<div ng-click="makeTrue = !makeTrue" class="head">Activity: {{ item.name }} </div>
-	<div ng-show="makeTrue">
-		<div ng-show="item.address">{{ item.address }}</div>
-		<div ng-show="item.contact">{{ item.contact }}</div>
-		<div ng-show="item.other">{{ item.other }}</div>
-	</div>
-</div>
-
 
