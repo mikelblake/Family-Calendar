@@ -1,13 +1,14 @@
-<h1 class="inline">Family Homepage</h1>
+<h1 class="header">Family Homepage</h1>
 
-<div class="inline">
+<h3 class="bigger"><strong>Family Members</strong></h3>
+<span ng-repeat="mem in mems">
+	<a ng-href="#/fam_mem/{{mem.$id}}" class="names">{{mem.name}}</a>
+</span>
+
+<span class="addMember">
 	<input ng-model="mem" placeholder="Name" >
 	<button ng-click="addMem(mem)">Add Family Member</button>
-</div>
+</span>
 
-<h3>Family Members</h3>
-<div ng-repeat="mem in mems">
-	<a ng-href="#/fam_mem/{{mem.$id}}">{{mem.$id}}</a>
-</div>
+<div ui-calendar ng-model="eventSources" class="clear"></div>
 
-<div id="calendar"></div>

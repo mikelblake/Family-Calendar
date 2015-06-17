@@ -1,19 +1,23 @@
-<div ng-show="show">
-	<h2>Login</h2>
-	<form>
-		<input type="email" placeholder="Enter Email" ng-model="loginUser.email" required>
-		<input type="password" placeholder="Enter Password" ng-model="loginUser.password" required>
-		<button ng-click="login(loginUser)" ng-disabled="loginForm.$invalid">Login</button>
-	</form>
-
-</div>
-
-<button ng-click="show = !show">Login</button>
-<form ng-hide="show">
+<div class="center">
+	<h1 class="header">Family Calendar</h1>
+	<div ng-if="loginShow">
+		<h2>Login</h2>
+		<form>
+			<input type="email" placeholder="Enter Email" ng-model="loginUser.email" required>
+			<input type="password" placeholder="Enter Password" ng-model="loginUser.password" required>
+			<button ng-click="login(loginUser)" ng-disabled="loginForm.$invalid">Login</button>
+		</form>
+	</div>
+	<div ng-if="registerShow">
 	<h2>Register</h2>
-	<input type="text" placeholder="Full Name" ng-model="registerUser.name" required>
-	<input type="email" placeholder="Enter Email" ng-model="registerUser.email" required>
-	<input type="password" placeholder="Enter Password" ng-model="registerUser.password" required>
-	<button ng-click="register(registerUser)" ng-disabled="registerForm.$invalid">Register</button>
-	
-</form>
+		<form>
+			<input type="text" placeholder="Full Name" ng-model="registerUser.name" required>
+			<input type="email" placeholder="Enter Email" ng-model="registerUser.email" required>
+			<input type="password" placeholder="Enter Password" ng-model="registerUser.password" required>
+			<button ng-click="register(registerUser)" ng-disabled="registerForm.$invalid">Register</button>
+		</form>
+	</div>
+<div class="btn-center">
+	<button ng-click="loginShow = !loginShow" >Login</button><button ng-click="registerShow = !registerShow">Register</button>
+</div>
+</div>

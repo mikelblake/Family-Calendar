@@ -1,4 +1,55 @@
-.inline {
-	display: inline-block;
-	margin: 10px;
+* {
+	color: gray;
+	font-family: 'Poiret One', cursive;
+}
+
+.header {
+	text-align: center;
+	color: #003366;
+	font-family: 'Raleway', sans-serif;
+	font-size: 44px;
+}
+
+.head {
+	color: RoyalBlue;
+	font-family: 'Raleway', sans-serif;
+	font-size: 24px;
+}
+
+.center {
+	position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn-center {
+	position: absolute;
+  left: 50%;
+  top: 120%;
+  transform: translate(-50%, -50%);
+}
+
+.names {
+	text-decoration: none;
+	font-size: 24px;
+	color: RoyalBlue;
+	margin: 20px;
+}
+
+.addMember {
+	float: right;
+	margin-bottom: 70px;
+}
+
+.clear {
+	clear: both;
+}
+
+.bigger {
+	font-size: 28px;
+}
+
+.selectForm {
+	border: 1px gray;
 }

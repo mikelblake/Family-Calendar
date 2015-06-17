@@ -1,4 +1,4 @@
-var app = angular.module('familyCalendar', ['ngRoute', 'firebase']);
+var app = angular.module('familyCalendar', ['ngRoute', 'firebase', 'ui.calendar']);
 
 app.config(function($routeProvider){
 
@@ -17,8 +17,6 @@ app.config(function($routeProvider){
 		templateUrl: 'memPage/mem.html',
 		controller: 'memCtrl'
 	})
-
-	// user id path??
 
 	.otherwise({
     redirectTo: '/login'

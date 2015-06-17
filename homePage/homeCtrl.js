@@ -8,13 +8,13 @@ app.controller('homeCtrl', function($scope, $firebaseArray){
 
 	$scope.mems = firebaseMems;
 	$scope.mems.$loaded().then(function(){
-		console.log($scope.mems);
 	})
 
   $scope.addMem = function(mem) {
-  	console.log(mem);
-      memRef.child(mem).set({name: mem});
-      
+    firebaseMems.$add({ name: mem }).then(function(addedMemRef) {
+    	var id = addedMemRef.key();
+    	var index = firebaseMems.$indexFor(id);
+    })
   };
+  $scope.eventSources = [];
 });
-
